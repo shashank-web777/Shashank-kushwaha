@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Attendance — Surprise!</title>
+  <style>
+    :root{--bg:#0f1724;--accent:#f97316}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Roboto;background:linear-gradient(135deg,#071229,#0b1b2b);color:#e6eef8;display:grid;place-items:center;padding:24px}
+    .wrap{max-width:760px;width:100%;background:rgba(255,255,255,0.03);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .fake-link{background:rgba(255,255,255,0.05);padding:12px 18px;border-radius:10px;border:1px dashed rgba(255,255,255,0.1);cursor:pointer;font-weight:600;display:inline-block}
+    .fake-link:hover{background:rgba(255,255,255,0.08)}
+    .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s}
+    .modal.open{opacity:1;pointer-events:auto}
+    .card{background:#021024;padding:24px;border-radius:14px;max-width:560px;text-align:center}
+    .insta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,#833AB4,#FD1D1D,#F56040);color:white;text-decoration:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>FREE ATTENDANCE — Click to claim (Limited)</h1>
+    <p>Abhi claim karein — sirf pehle 100 students ke liye free attendance!</p>
+    <button class="fake-link" id="claimBtn">Claim your FREE Attendance →</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="card">
+      <h2>Surprise!</h2>
+      <p>MASTI TO DEKHO, FREE KI ATTENDANCE LENE SE GHAR NAHI CHALTA MITTAR, MEHNAT KARNI PADTI HAI, BUT AAP KAR SAKTE HAI THODA ENJOY BHI AT PANDORA FEST</p>
+      <a href="https://www.instagram.com/pandora2o25?igsh=c200bjNrZXdtbGxr" target="_blank" rel="noopener" class="insta">Follow @pandora_fest</a>
+    </div>
+  </div>
+
+  <script>
+    const claimBtn = document.getElementById('claimBtn');
+    const modal = document.getElementById('modal');
+
+    claimBtn.addEventListener('click', ()=>{
+      modal.classList.add('open');
+    });
+
+    modal.addEventListener('click', (e)=>{
+      if(e.target===modal){
+        modal.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
